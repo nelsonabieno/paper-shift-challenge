@@ -6,6 +6,12 @@ Rails.application.routes.draw do
 
       ### USERS ###
       resources :users
+
+      ### EVENTS ###
+      resources :events
+
+      ### LOCATIONS ###
+      resources :locations
     end
   end
 end
