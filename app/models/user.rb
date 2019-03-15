@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_paper_trail
+  has_many :events
+  has_many :locations
 
   ### VALIDATIONS ###
   validates :name, presence: true, length: { maximum: 255 }
@@ -8,6 +10,11 @@ class User < ApplicationRecord
   ### CLASS METHODS ###
   def self.alive
     where(deleted_at: nil)
+  end
+
+  # GET /user/new
+  def new
+    @user = User.new
   end
 
   def self.deleted
