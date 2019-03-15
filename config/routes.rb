@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :events_locations
   namespace :api do
     namespace :v1 do
       ### AUTHENTICATION ###
