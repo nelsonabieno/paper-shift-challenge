@@ -4,6 +4,12 @@ Rails.application.routes.draw do
       ### AUTHENTICATION ###
       post 'auth' => 'user_token#create'
 
+      ### LOGIN ###
+      post '/login' => 'authentication#login'
+
+      ### LOGOUT ###
+      get '/logout' => 'authentication#logout'
+
       ### USERS ###
       resources :users
 
@@ -12,6 +18,10 @@ Rails.application.routes.draw do
 
       ### LOCATIONS ###
       resources :locations
+
+      resources :events do
+        resources :users
+      end
     end
   end
 end

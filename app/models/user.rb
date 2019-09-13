@@ -1,9 +1,14 @@
+require 'bcrypt'
+
 class User < ApplicationRecord
+  has_secure_password
+  has_many :events
   has_paper_trail
 
   ### VALIDATIONS ###
   validates :name, presence: true, length: { maximum: 255 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 255 }
+  validates :password, presence:true, length: { minimum: 5 }
 
   ### CLASS METHODS ###
   def self.alive
