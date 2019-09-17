@@ -10,6 +10,7 @@ gem 'dalli',                          '~> 2.7.7'
 gem 'sidekiq',                        '~> 5.2.2'
 
 group :development do
+  gem 'pry'
   gem 'listen',                       '>= 3.0.5', '< 3.2'
   gem 'dotenv-rails',                 '~> 1.0.2'
 end
