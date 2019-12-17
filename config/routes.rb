@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      ### AUTHENTICATION ###
-      post 'auth' => 'user_token#create'
-
-      ### USERS ###
       resources :users
 
       ### EVENTS ###
@@ -12,6 +8,11 @@ Rails.application.routes.draw do
 
       ### LOCATIONS ###
       resources :locations
+
+      resources :users do
+        resources :events, module: :users, only: [:update, :destroy]
+        resources :locations, module: :users, only: [:update, :destroy]
+      end
     end
   end
 end

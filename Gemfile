@@ -13,3 +13,14 @@ group :development do
   gem 'listen',                       '>= 3.0.5', '< 3.2'
   gem 'dotenv-rails',                 '~> 1.0.2'
 end
+
+group :development, :test do
+  gem 'pry'
+  gem 'rspec-rails'
+end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+end
