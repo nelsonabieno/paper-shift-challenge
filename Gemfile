@@ -6,7 +6,7 @@ gem 'puma',                           '~> 3.7'
 gem 'rack-cors',                      '~> 1.0.2'
 gem 'paper_trail',                    '~> 9.0.0'
 gem 'active_model_serializers',       '~> 0.10.7'
-gem 'dalli',                          '~> 2.7.7'
+gem 'dalli',                          '~> 3.2.3'
 gem 'sidekiq',                        '~> 5.2.2'
 
 group :development do
